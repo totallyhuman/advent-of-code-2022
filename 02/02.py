@@ -4,8 +4,9 @@ def part1(x):
     for i in x:
         o = 'ABC'.index(i[0])
         m = 'XYZ'.index(i[1])
+        e = (m - o + 1) % 3
 
-        total += [3, 6, 0][(m - o) % 3] + (m + 1)
+        total += (e * 3) + (m + 1)
     
     return total
 
@@ -14,9 +15,10 @@ def part2(x):
 
     for i in x:
         o = 'ABC'.index(i[0])
-        m = (o + 'YZX'.index(i[1])) % 3
+        e = 'XYZ'.index(i[1])
+        m = (o + e - 1) % 3
 
-        total += 'XYZ'.index(i[1]) * 3 + (m + 1)
+        total += (e * 3) + (m + 1)
     
     return total
 
