@@ -22,7 +22,7 @@ def part2(x):
     
     return total
 
-with open('04.in') as f:
+with open('input/04.in') as f:
     s = f.read()
     x = [[[*map(int, j.split('-'))] for j in i.split(',')] for i in s.splitlines()]
 

@@ -65,7 +65,7 @@ def part2(x):
     
     return max(map(max, sc))
 
-with open('08.in') as f:
+with open('input/08.in') as f:
     s = f.read()
     x = [[int(i) for i in l] for l in s.splitlines()]
 

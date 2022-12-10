@@ -16,7 +16,7 @@ def part2(x, y):
         
     return ''.join(i[-1] for i in x)
 
-with open('05.in') as f:
+with open('input/05.in') as f:
     s = f.read()
     c, d = s.split('\n\n')
 

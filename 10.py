@@ -32,7 +32,7 @@ def part2(x):
     
     return s
 
-with open('10.in') as f:
+with open('input/10.in') as f:
     s = f.read()
     x = [i.split() for i in s.splitlines()]
 

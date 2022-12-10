@@ -18,7 +18,7 @@ def part2(x):
     
     return total
 
-with open('03.in') as f:
+with open('input/03.in') as f:
     s = f.read()
     x = s.splitlines()
 

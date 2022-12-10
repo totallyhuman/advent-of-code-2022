@@ -64,7 +64,7 @@ def part2(x):
     
     return len(t_pos)
 
-with open('09.in') as f:
+with open('input/09.in') as f:
     s = f.read()
     x = [i.split() for i in s.splitlines()]
 

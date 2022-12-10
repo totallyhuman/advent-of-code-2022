@@ -12,7 +12,7 @@ def part2(x):
         if len({*p}) == 14:
             return i
 
-with open('06.in') as f:
+with open('input/06.in') as f:
     s = f.read()
     x = s
 

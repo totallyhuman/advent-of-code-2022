@@ -22,7 +22,7 @@ def part2(x):
     
     return total
 
-with open('02.in') as f:
+with open('input/02.in') as f:
     s = f.read()
     x = [i.split() for i in s.splitlines()]
 

@@ -42,7 +42,7 @@ def part1(x):
 def part2(x):
     return min(i for i in sizes(x) if i >= 30000000 - (70000000 - size(x)))
 
-with open('07.in') as f:
+with open('input/07.in') as f:
     s = f.read()
     x = parse(s.splitlines())[0]
 
