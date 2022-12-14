@@ -2,25 +2,25 @@ def parse(x, i = 1, f = {}):
     while i < len(x):
         l = x[i].split()[1:]
 
-        if l[0] == 'ls':
-            i += 1
-
-            while i < len(x) and not x[i].startswith('$'):
-                c = x[i].split()
-
-                if c[0] == 'dir':
-                    f[c[1]] = {}
-                else:
-                    f[c[1]] = int(c[0])
-                
+        match l:
+            case ['ls']:
                 i += 1
-        elif l[0] == 'cd':
-            if l[1] == '..':
+
+                while i < len(x) and not x[i].startswith('$'):
+                    c = x[i].split()
+
+                    if c[0] == 'dir':
+                        f[c[1]] = {}
+                    else:
+                        f[c[1]] = int(c[0])
+                    
+                    i += 1
+            case ['cd', '..']:
                 return (f, i)
-            else:
-                f[l[1]], i = parse(x, i + 1, f[l[1]])
-        
-            i += 1
+            case ['cd', n]:
+                f[n], i = parse(x, i + 1, f[l[1]])
+            
+                i += 1
     
     return (f, i)
 

@@ -6,12 +6,14 @@ def move(k1, k2):
     dy = y1 - y2
 
     if abs(dx) > 1 or abs(dy) > 1:
-        if dx == 0 or dy == 0:
-            x2 += dx / 2
-            y2 += dy / 2
-        else:
-            x2 += dx / abs(dx)
-            y2 += dy / abs(dy)
+        match (dx, dy):
+            case (0, _) | (_, 0):
+                x2 += dx / 2
+                y2 += dy / 2
+            case _:
+                x2 += dx / abs(dx)
+                y2 += dy / abs(dy)
+                
     
     return (x2, y2)
 
@@ -23,14 +25,15 @@ def part1(x):
 
     for d, n in x:
         for _ in range(int(n)):
-            if d == 'R':
-                hx += 1
-            elif d == 'L':
-                hx -= 1
-            elif d == 'U':
-                hy += 1
-            elif d == 'D':
-                hy -= 1
+            match d:
+                case 'R':
+                    hx += 1
+                case 'L':
+                    hx -= 1
+                case 'U':
+                    hy += 1
+                case 'D':
+                    hy -= 1
 
             tx, ty = move((hx, hy), (tx, ty))
             t_pos.add((tx, ty))
@@ -46,14 +49,15 @@ def part2(x):
         for _ in range(int(n)):
             hx, hy = k[0]
 
-            if d == 'R':
-                hx += 1
-            elif d == 'L':
-                hx -= 1
-            elif d == 'U':
-                hy += 1
-            elif d == 'D':
-                hy -= 1
+            match d:
+                case 'R':
+                    hx += 1
+                case 'L':
+                    hx -= 1
+                case 'U':
+                    hy += 1
+                case 'D':
+                    hy -= 1
             
             k[0] = (hx, hy)
 

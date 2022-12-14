@@ -20,15 +20,15 @@ def part1(x):
     for _ in range(20):
         for m in ms:
             for i in m['i']:
-                if m['o'][2] == 'old':
-                    y = i
-                else:
-                    y = int(m['o'][2])
-                
-                if m['o'][1] == '+':
-                    w = i + y
-                elif m['o'][1] == '*':
-                    w = i * y
+                match m['o'][1:]:
+                    case ['+', 'old']:
+                        w = i + i
+                    case ['*', 'old']:
+                        w = i * i
+                    case ['+', y]:
+                        w = i + int(y)
+                    case ['*', y]:
+                        w = i * int(y)
                 
                 w //= 3
 
@@ -51,15 +51,15 @@ def part2(x):
     for _ in range(10000):
         for m in ms:
             for i in m['i']:
-                if m['o'][2] == 'old':
-                    y = i
-                else:
-                    y = int(m['o'][2])
-                
-                if m['o'][1] == '+':
-                    w = i + y
-                elif m['o'][1] == '*':
-                    w = i * y
+                match m['o'][1:]:
+                    case ['+', 'old']:
+                        w = i + i
+                    case ['*', 'old']:
+                        w = i * i
+                    case ['+', y]:
+                        w = i + int(y)
+                    case ['*', y]:
+                        w = i * int(y)
 
                 w %= p
 
