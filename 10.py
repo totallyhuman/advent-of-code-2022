@@ -23,9 +23,9 @@ def part2(x):
 
     for c in range(240):
         if abs(rs[c] - (c % 40)) < 2:
-            s += '#'
+            s += '██'
         else:
-            s += ' '
+            s += '  '
         
         if (c + 1) % 40 == 0:
             s += '\n'

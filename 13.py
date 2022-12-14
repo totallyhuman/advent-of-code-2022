@@ -1,3 +1,4 @@
+import ast
 import functools
 
 def compare(x, y):
@@ -26,7 +27,7 @@ def compare(x, y):
     return 0
 
 def part1(x):
-    l = [tuple(map(eval, i.splitlines())) for i in x.split('\n\n')]
+    l = [tuple(map(ast.literal_eval, i.splitlines())) for i in x.split('\n\n')]
     c = []
 
     for i, (x, y) in enumerate(l, start = 1):
@@ -36,7 +37,7 @@ def part1(x):
     return sum(c)
 
 def part2(x):
-    l = [*map(eval, x.replace('\n\n', '\n').splitlines())] + [[[2]], [[6]]]
+    l = [*map(ast.literal_eval, x.replace('\n\n', '\n').splitlines())] + [[[2]], [[6]]]
 
     s = sorted(l, key = functools.cmp_to_key(compare))
 
