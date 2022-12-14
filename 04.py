@@ -1,11 +1,11 @@
 def part1(x):
     total = 0
 
-    for i in x:
-        p1 = {*range(i[0][0], i[0][1] + 1)}
-        p2 = {*range(i[1][0], i[1][1] + 1)}
+    for ((p1x, p1y), (p2x, p2y)) in x:
+        r1 = {*range(p1x, p1y + 1)}
+        r2 = {*range(p2x, p2y + 1)}
 
-        if p1 & p2 in [p1, p2]:
+        if r1 & r2 in [r1, r2]:
             total += 1
     
     return total
@@ -13,11 +13,11 @@ def part1(x):
 def part2(x):
     total = 0
 
-    for i in x:
-        p1 = {*range(i[0][0], i[0][1] + 1)}
-        p2 = {*range(i[1][0], i[1][1] + 1)}
+    for ((p1x, p1y), (p2x, p2y)) in x:
+        r1 = {*range(p1x, p1y + 1)}
+        r2 = {*range(p2x, p2y + 1)}
 
-        if p1 & p2:
+        if r1 & r2:
             total += 1
     
     return total
